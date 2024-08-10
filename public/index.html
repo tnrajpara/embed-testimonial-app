@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embed Testimonials</title>
+  </head>
+  <body>
+    <iframe
+      id="testimonial-embed"
+      src="https://embed-testimonial-app.vercel.app/embed/bdaa7473-5e71-4892-853a-f816adb53911"
+      frameborder="0"
+      scrolling="no"
+      width="100%"
+      style="overflow: hidden; height: 588px"
+      width="100%"
+      height=""
+    ></iframe>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"
+    ></script>
+    <script type="text/javascript">
+      iFrameResize({ log: false, checkOrigin: false }, "#testimonial-embed");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+/* public/styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0.5rem;
+    transition: transform 0.3s;
+    width: calc(35% - 1rem);
+    border-bottom: 1px solid #ccc;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+
+.testimonial-content {
+    padding: 1rem;
+}
+
+.testimonial-subheader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.testimonial-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.testimonial-content p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.testimonial-content .rating {
+    font-weight: bold;
+    color: #f39c12;
+    font-size: calc(1rem + 0.2vw);
+}
+
+
+#user-profile {
+    border-radius: 100%;
+    width: 50px;
+    height:50px;
+    object-fit: cover;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+
+.attachment{
+    width:calc(80% + 2rem);
+    height: 200px;
+    object-fit: cover;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .testimonials-container {
+        padding: 0.5rem;
+    }
+
+    .testimonial {
+        width: calc(80% - 1rem);
+       
+    }
+
+    
+}
