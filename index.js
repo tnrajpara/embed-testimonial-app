@@ -42,51 +42,51 @@ app.get("/embed/:id", async (req, res) => {
       return res.status(404).send("Space not found");
     }
 
-    // Render dynamic HTML content based on the ID
-    res.send(`
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Embedded Testimonials</title>
-        <link rel="stylesheet" href="/styles.css">
-      </head>
-      <body>
-        <div id="testimonials-container" class="testimonials-container">
-  
-          ${spaceData
-            .map(
-              (testimonial) => `
-            <div class="testimonial">  
-              <div class="testimonial-content">
-                  <div className="testimonial-subheader">
-                  <img src="${testimonial.photo}" alt="${
-                testimonial.name
-              }" id="user-profile" />
-                <h3>${testimonial.name}</h3></div>
-                <p>${testimonial.message}</p>
+    // res.send(`
+    //   <!DOCTYPE html>
+    //   <html lang="en">
+    //   <head>
+    //     <meta charset="UTF-8">
+    //     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    //     <title>Embedded Testimonials</title>
+    //     <link rel="stylesheet" href="/styles.css">
+    //   </head>
+    //   <body>
+    //     <div id="testimonials-container">
+    //       ${spaceData
+    //         .map(
+    //           (testimonial) => `
+    //         <div class="testimonial">
+    //           <div class="testimonial-subheader">
+    //             <img src="${testimonial.photo}" alt="${
+    //             testimonial.name
+    //           }" id="user-profile" />
+    //             <h3 style="margin-right:0.5rem;">${testimonial.name}</h3>
+    //           </div>
+    //           <div class="testimonial-content">
+    //             <p>${testimonial.message}</p>
 
-                  ${testimonial.attachments.map((attachment) => {
-                    return `<img src="${attachment}" class="attachment" alt="${attachment.name}" />`;
-                  })}
-                 
-                <p class="rating">${
-                  "★".repeat(Math.round(testimonial.rating)) +
-                  "☆".repeat(5 - Math.round(testimonial.rating))
-                }</p>
-              </div>
-            </div>
-          `
-            )
-            .join("")}
-        </div>
-      </body>
-      </html>
-    `);
+    //               <img src="${
+    //                 testimonial.attachments[0]
+    //               }" class="attachment" alt="Attachment" />
+
+    //             <p class="rating">${
+    //               "★".repeat(Math.round(testimonial.rating)) +
+    //               "☆".repeat(5 - Math.round(testimonial.rating))
+    //             }</p>
+    //           </div>
+    //         </div>
+    //       `
+    //         )
+    //         .join("")}
+    //     </div>
+    //   </body>
+    //   </html>
+    // `);
+    res.json(spaceData);
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).send("An error occurred", error);
+    res.status(500).send("An error occurred");
   }
 });
 
